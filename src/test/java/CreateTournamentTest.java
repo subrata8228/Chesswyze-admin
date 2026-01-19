@@ -38,6 +38,10 @@ public class CreateTournamentTest extends BaseTest {
         //submit
         createTournament.clickOnSubmit();
 
+        //click on alert
+
+        createTournament.handleConfirmationPopup();
+
 
 
 
