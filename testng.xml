@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Chesswyze admin suite">
+
+    <test name="Chesswyze admin test">
+        <classes>
+            <class name="CreateTournamentTest"/>
+
+        </classes>
+    </test>
+
+</suite>
