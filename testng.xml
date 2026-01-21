@@ -3,9 +3,26 @@
 
     <test name="Chesswyze admin test">
         <classes>
-            <class name="LoginPageTest"/>
-            <class name="CreateTournamentTest"/>
-            <class name="AddTrainerTest" />
+            <class name="LoginPageTest">
+                <methods>
+                    <include name="verifyLoginPage"/>
+                </methods>
+            </class>
+
+
+            <class name="CreateTournamentTest">
+                <methods>
+                    <include name="verifyCreateTournament"/>
+                </methods>
+
+            </class>
+            <class name="AddTrainerTest">
+                <methods>
+                    <include name="verifyAddTrainer"/>
+                    <include name="verifyDeleteTrainer"/>
+                </methods>
+            </class>
+
         </classes>
     </test>
 
