@@ -23,6 +23,12 @@
                 </methods>
             </class>
 
+            <class name="AddTeamTest">
+                <methods>
+
+                </methods>
+            </class>
+
         </classes>
     </test>
 
