@@ -37,6 +37,7 @@ public class AddTrainerTest extends BaseTest {
         loginPage.login(prop.getProperty("username"), prop.getProperty("passw"));
         addTrainer.clickOnTrainerManagement();
         addTrainer.deleteTrainer();
+        addTrainer.handleConfirmationPopup();
 
     }
 }

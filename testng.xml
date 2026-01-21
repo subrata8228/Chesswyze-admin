@@ -3,8 +3,9 @@
 
     <test name="Chesswyze admin test">
         <classes>
+            <class name="LoginPageTest"/>
             <class name="CreateTournamentTest"/>
-
+            <class name="AddTrainerTest" />
         </classes>
     </test>
 
