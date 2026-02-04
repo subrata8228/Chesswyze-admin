@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
 
 public class AddTeam {
@@ -23,6 +24,7 @@ public class AddTeam {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement addTeamButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("addteam.menu.xpath"))));
         addTeamButton.click();
+        System.out.println("Add Team button clicked");
     }
 
     public void clickCreateTeamButton() {
@@ -51,6 +53,20 @@ public class AddTeam {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         Alert popup = wait.until(ExpectedConditions.alertIsPresent());
         popup.accept();
+    }
+
+    public void deleteteam(String teamName) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        List<WebElement> teamlist = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(prop.getProperty("addteam.deleteteam.xpath"))));
+        int i = 0;
+        for (WebElement team : teamlist) {
+            i++;
+            if (team.getText().equalsIgnoreCase(teamName)) {
+                WebElement t = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath((prop.getProperty("addteam.selectoneteam.xpath")) + "[" + i + "]")));
+               // t.click();
+                break;
+            }
+        }
     }
 
 }
