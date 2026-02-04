@@ -10,7 +10,7 @@ public class AddTeamTest extends BaseTest {
 
 
     @Test
-    public void AddTeamTest() {
+    public void addingTeam() {
 
         LoginPage loginPage = new LoginPage(driver,prop);
         AddTeam addTrainer = new AddTeam(driver,prop);
@@ -23,6 +23,17 @@ public class AddTeamTest extends BaseTest {
         addTrainer.clickOnSubmitButton();
         addTrainer.handleConfirmationPopup();
 
+
+    }
+    @Test
+    public void deleteTeam() {
+
+        LoginPage loginPage = new LoginPage(driver,prop);
+        AddTeam addTrainer = new AddTeam(driver,prop);
+        loginPage.login(prop.getProperty("username"), prop.getProperty("passw"));
+        addTrainer.clickSwitchToTrainer();
+        addTrainer.clickAddTeamButton();
+        addTrainer.deleteteam(prop.getProperty("addteam.teamName"));
 
     }
 }
