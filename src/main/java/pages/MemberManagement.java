@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -76,6 +77,26 @@ public class MemberManagement {
 
     public void clickSwitchToTrainer() {
         driver.findElement(By.xpath(prop.getProperty("switchtotrainer.xpath"))).click();
+    }
+
+    public void deleteUser() {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement nextbutton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(prop.getProperty("membermanagement.userlist.xpath"))));
+        List<WebElement> totalusers= new ArrayList<WebElement>();
+        ArrayList<String> userdetail = new ArrayList<String>();
+
+        while(nextbutton.isEnabled()) {
+            totalusers=   wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(prop.getProperty("membermanagement.nextbutton.xpath"))));
+            nextbutton.click();
+        }
+
+        for(WebElement totaluser:totalusers){
+            userdetail.add(totaluser.getText());
+        }
+        System.out.println("Total users: "+totalusers.size());
+        System.out.println("Total users: "+userdetail);
+
     }
 
     public void handleConfirmationPopup() {
