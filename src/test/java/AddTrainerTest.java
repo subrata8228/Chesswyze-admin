@@ -7,7 +7,7 @@ import static config.ConfigReader.prop;
 
 public class AddTrainerTest extends BaseTest {
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void verifyAddTrainer() {
 
         LoginPage loginPage = new LoginPage(driver,prop);

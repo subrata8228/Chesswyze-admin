@@ -30,4 +30,15 @@ public class MemberManagementTest extends BaseTest {
 
 
     }
+
+    @Test
+    public void verifyDeleteUser() {
+        LoginPage loginPage = new LoginPage(driver,prop);
+        MemberManagement membermanagement = new MemberManagement(driver, prop);
+        loginPage.login(prop.getProperty("username"), prop.getProperty("passw"));
+        membermanagement.clickSwitchToTrainer();
+        membermanagement.clickOnMemberManagement();
+        membermanagement.deleteUser();
+
+    }
 }
